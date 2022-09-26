@@ -1,0 +1,4 @@
+# 最初のdjangoセットアップ
+docker run -it --rm --user "$(id -u):$(id -g)" -v "$PWD":/usr/src/app -w /usr/src/app app01:latest django-admin startproject app01
+
+app01フォルダが作成されるので、dockerfileやdocker-compose.yamlなどを配下に移動

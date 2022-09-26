@@ -1,0 +1,24 @@
+name: app01 test
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on:  ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: container up
+      run: |
+        docker-compose build app01
+        docker-compose up -d db
+        sleep 5
+        docker-compose up -d app01
+        sleep 5
+        docker ps -a
+        
+    - name: execute django test
+      run: |
+        docker exec app01 /bin/bash -c 'python manage.py test'
