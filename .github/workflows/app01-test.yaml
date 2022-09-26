@@ -2,7 +2,7 @@ name: app01 test
 on:
   push:
     paths:
-      - '/app01/**'
+      - 'app01/**'
 
 jobs:
   build:
