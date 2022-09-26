@@ -1,7 +1,8 @@
 name: app01 test
 on:
   push:
-  workflow_dispatch:
+    paths:
+      - '/app01/**'
 
 jobs:
   build:
