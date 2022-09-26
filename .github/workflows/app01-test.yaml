@@ -12,6 +12,7 @@ jobs:
 
     - name: container up
       run: |
+        cd test_environment
         docker-compose build app01
         docker-compose up -d db
         sleep 5
